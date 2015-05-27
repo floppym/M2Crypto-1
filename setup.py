@@ -33,7 +33,7 @@ class CustomBuild(build):
 class CustomInstall(install):
     def run(self):
         self.run_command('build_ext')
-        self.do_egg_install()
+        install.run(self)
 
 class _M2CryptoBuildExt(build_ext.build_ext):
     '''Specialization of build_ext to enable swig_opts to inherit any 
